@@ -1,0 +1,52 @@
+/* FONTS BLOCK */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap');
+
+
+/* VARIABLES BLOCK (Dark Theme Default) */
+:root {
+    /* Colors */
+    --color-bg-main: #121212;
+    --color-bg-secondary: #1E1E1E;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B3B3B3;
+    --color-accent: #FF3B30;
+    --color-accent-hover: #FF5C50;
+    --color-accent-focus: #ff8000;
+    --color-border-divider: #333333;
+
+    /* Typography */
+    --font-primary: "Orbitron", system-ui, sans-serif; /* For headings, logos, buttons */
+    --font-secondary: "Inter", system-ui, sans-serif; /* For body text, forms */
+    --font-size-base: 1rem; /* 16px */
+    --line-height-base: 1.5;
+
+    /* Spacing & Sizing */
+    --gap-xs: 0.5rem;
+    --gap-sm: 1rem;
+    --gap-md: 1.5rem;
+    --gap-lg: 2rem;
+    --gap-xl: 3rem;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+
+    /* Transitions */
+    --transition-default: all 0.3s ease;
+}
+
+
+/* BASE BLOCK */
+.page {
+    font-family: var(--font-secondary), sans-serif;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-main);
+    min-height: 100vh;
+}
+
+/* Focus Outline Utility */
+.focus-outline:focus-visible {
+    outline: 2px solid var(--color-accent-focus);
+    outline-offset: 2px;
+}
