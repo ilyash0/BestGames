@@ -144,3 +144,31 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSlider();
     startAutoSlide(slideIntervalTime);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggleBtn = document.querySelector('.header__theme-toggle');
+    const themeIcon = document.querySelector('.header__theme-icon');
+    const htmlElement = document.documentElement; // Или document.body
+
+    const isLightTheme = localStorage.getItem('theme') === 'light';
+
+    if (isLightTheme) {
+        htmlElement.classList.add('theme-light');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+        htmlElement.classList.toggle('theme-light');
+
+        if (htmlElement.classList.contains('theme-light')) {
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    });
+});
