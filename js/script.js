@@ -1,39 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider');
-    const track = slider.querySelector('.slider__track');
-    const slides = slider.querySelectorAll('.slider__slide');
-    const indicators = slider.querySelectorAll('.slider__indicator');
+    if (!slider) return;
 
-    if (!track || !slides.length || !indicators.length) {
-        console.error('Элементы слайдера не найдены.');
+    const track = slider.querySelector('.slider__track');
+    const slides = Array.from(slider.querySelectorAll('.slider__slide'));
+    const indicators = Array.from(slider.querySelectorAll('.slider__indicator'));
+
+    if (!track || slides.length === 0) {
+        console.error('Элементы слайдера не найдены или нет слайдов.');
         return;
     }
 
     const totalSlides = slides.length;
     let currentSlideIndex = 0;
-    let autoSlideInterval;
-    const slideIntervalTime = 5000;
+
+    let autoSlideInterval = null;
+    let autoSlideTimeout = null;
+    const slideIntervalTime = 5000; // ms
 
     function updateSlider() {
         const translateX = -currentSlideIndex * 100;
         track.style.transform = `translateX(${translateX}%)`;
 
-        indicators.forEach((indicator, index) => {
-            if (index === currentSlideIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
+        indicators.forEach((indicator, idx) => {
+            indicator.classList.toggle('active', idx === currentSlideIndex);
         });
     }
 
-    function goToNextSlide() {
-        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+    function goToSlide(index) {
+        currentSlideIndex = ((index % totalSlides) + totalSlides) % totalSlides;
         updateSlider();
     }
 
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(goToNextSlide, slideIntervalTime);
+    function goToNextSlide() {
+        goToSlide(currentSlideIndex + 1);
+    }
+
+    function goToPrevSlide() {
+        goToSlide(currentSlideIndex - 1);
     }
 
     function stopAutoSlide() {
@@ -41,50 +45,102 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(autoSlideInterval);
             autoSlideInterval = null;
         }
+        if (autoSlideTimeout) {
+            clearTimeout(autoSlideTimeout);
+            autoSlideTimeout = null;
+        }
+    }
+
+    function startAutoSlide(delay = slideIntervalTime) {
+        if (autoSlideInterval || autoSlideTimeout) return;
+
+        autoSlideTimeout = setTimeout(() => {
+            if (autoSlideInterval || !autoSlideTimeout) {
+                autoSlideTimeout = null;
+                return;
+            }
+            autoSlideInterval = setInterval(goToNextSlide, slideIntervalTime);
+            autoSlideTimeout = null;
+        }, delay);
     }
 
     indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            currentSlideIndex = index;
-            updateSlider();
+        indicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(index);
             stopAutoSlide();
-            startAutoSlide();
+            startAutoSlide(slideIntervalTime);
         });
     });
 
     let touchStartX = 0;
-    let touchEndX = 0;
+    let touchStartY = 0;
+    let isTouching = false;
+
+    const swipeThreshold = 50;
+    const horizontalDetectionThreshold = 10;
 
     track.addEventListener('touchstart', (event) => {
-        touchStartX = event.changedTouches[0].screenX;
+        if (!event.touches || event.touches.length === 0) return;
+        const t = event.touches[0];
+        touchStartX = t.clientX;
+        touchStartY = t.clientY;
+        isTouching = true;
         stopAutoSlide();
     }, { passive: true });
 
     track.addEventListener('touchmove', (event) => {
-        event.preventDefault();
+        if (!isTouching || !event.touches || event.touches.length === 0) return;
+
+        const t = event.touches[0];
+        const deltaX = t.clientX - touchStartX;
+        const deltaY = t.clientY - touchStartY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > horizontalDetectionThreshold) {
+            event.preventDefault();
+        }
     }, { passive: false });
 
     track.addEventListener('touchend', (event) => {
-        touchEndX = event.changedTouches[0].screenX;
-        handleSwipe();
-        startAutoSlide();
+        if (!isTouching) return;
+        isTouching = false;
+
+        const t = event.changedTouches[0];
+        const touchEndX = t.clientX;
+        const touchEndY = t.clientY;
+
+        const dx = touchEndX - touchStartX;
+        const dy = touchEndY - touchStartY;
+
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > swipeThreshold) {
+            if (dx < 0) {
+                goToNextSlide();
+            } else {
+                goToPrevSlide();
+            }
+        }
+
+        stopAutoSlide();
+        startAutoSlide(slideIntervalTime);
     }, { passive: true });
 
-    function handleSwipe() {
-        const swipeThreshold = 50;
+    slider.addEventListener('mouseenter', () => {
+        stopAutoSlide();
+    });
 
-        if (touchStartX - touchEndX > swipeThreshold) {
-            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-            updateSlider();
-        } else if (touchEndX - touchStartX > swipeThreshold) {
-            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        }
-    }
+    slider.addEventListener('mouseleave', () => {
+        stopAutoSlide();
+        startAutoSlide(slideIntervalTime);
+    });
+
+    slider.addEventListener('focusin', () => {
+        stopAutoSlide();
+    });
+    slider.addEventListener('focusout', () => {
+        stopAutoSlide();
+        startAutoSlide(slideIntervalTime);
+    });
 
     updateSlider();
-    startAutoSlide();
-
-    slider.addEventListener('mouseenter', stopAutoSlide);
-    slider.addEventListener('mouseleave', startAutoSlide);
+    startAutoSlide(slideIntervalTime);
 });

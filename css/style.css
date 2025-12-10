@@ -225,7 +225,6 @@
 /* SLIDER BLOCK */
 .slider {
     width: 100%;
-    overflow: hidden;
     background-color: var(--color-bg-secondary);
     padding: var(--gap-md) 0;
 }
@@ -235,6 +234,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--gap-sm);
+    overflow: hidden;
 }
 
 .slider__track {
