@@ -86,10 +86,9 @@
     </div>
 </section>
 
-<section class="fast-search">
+<section class="fast-search" id="search">
     <div class="fast-search__container">
         <h2 class="fast-search__title">Быстрый поиск</h2>
-
         <form class="fast-search__form">
             <div class="fast-search__input-wrapper">
                 <input
@@ -98,6 +97,7 @@
                         name="q"
                         placeholder="Введите название игры..."
                         autocomplete="off"
+                        aria-label="Поиск игр по названию"
                 >
                 <button class="fast-search__button focus-outline" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -133,7 +133,6 @@
                     </li>
                 </ul>
             </aside>
-
             <div class="fast-search__results">
                 <div class="game-card">
                     <img class="game-card__image" src="./img/doom-dark-ages-square.webp"
