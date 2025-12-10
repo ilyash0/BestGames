@@ -80,6 +80,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    height: 2rem;
 }
 
 .header__nav {
@@ -502,7 +503,7 @@
 .fast-search__button:hover,
 .fast-search__button:active {
     background-color: var(--color-accent-hover);
-    transform: translateY(-1px);
+    transform: scale(1.05);
 }
 
 .fast-search__content-layout {
