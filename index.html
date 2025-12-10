@@ -36,7 +36,7 @@
             </ul>
         </nav>
         <button class="header__login-btn focus-outline">Войти</button>
-        <button class="header__burger-menu focus-outline" aria-label="Открыть меню">
+        <button class="header__burger-menu focus-outline">
             <span class="header__burger-line"></span>
             <span class="header__burger-line"></span>
             <span class="header__burger-line"></span>
@@ -44,10 +44,10 @@
     </div>
 </header>
 
-<section class="slider" aria-label="Слайдер новинок игр">
+<section class="slider">
     <div class="slider__container">
         <div class="slider__track">
-            <div class="slider__slide" aria-roledescription="slide" aria-label="1 из 3">
+            <div class="slider__slide" aria-roledescription="slide">
                 <div class="slider__slide-content">
                     <h2 class="slider__slide-title">Baldur's Gate 3</h2>
                     <p class="slider__slide-price">5999 ₽</p>
@@ -57,7 +57,7 @@
                     <img class="slider__slide-image" src="./img/bg3.webp" alt="Обложка игры 'Baldur's Gate 3'">
                 </div>
             </div>
-            <div class="slider__slide" aria-roledescription="slide" aria-label="2 из 3">
+            <div class="slider__slide" aria-roledescription="slide">
                 <div class="slider__slide-content">
                     <h2 class="slider__slide-title">DOOM 2016</h2>
                     <p class="slider__slide-price">1499 ₽</p>
@@ -67,7 +67,7 @@
                     <img class="slider__slide-image" src="./img/doom.webp" alt="Обложка игры 'DOOM 2016'">
                 </div>
             </div>
-            <div class="slider__slide" aria-roledescription="slide" aria-label="3 из 3">
+            <div class="slider__slide" aria-roledescription="slide">
                 <div class="slider__slide-content">
                     <h2 class="slider__slide-title">Minecraft</h2>
                     <p class="slider__slide-price">1799 ₽</p>
@@ -79,14 +79,14 @@
             </div>
         </div>
         <div class="slider__indicators">
-            <button class="slider__indicator active focus-outline" aria-label="Перейти к слайду 1"></button>
-            <button class="slider__indicator focus-outline" aria-label="Перейти к слайду 2"></button>
-            <button class="slider__indicator focus-outline" aria-label="Перейти к слайду 3"></button>
+            <button class="slider__indicator active focus-outline"></button>
+            <button class="slider__indicator focus-outline"></button>
+            <button class="slider__indicator focus-outline"></button>
         </div>
     </div>
 </section>
 
-<section class="fast-search" id="search">
+<section class="fast-search">
     <div class="fast-search__container">
         <h2 class="fast-search__title">Быстрый поиск</h2>
 
@@ -98,9 +98,8 @@
                         name="q"
                         placeholder="Введите название игры..."
                         autocomplete="off"
-                        aria-label="Поиск игр по названию"
                 >
-                <button class="fast-search__button focus-outline" type="submit" aria-label="Найти игры">
+                <button class="fast-search__button focus-outline" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
@@ -233,6 +232,58 @@
                     <a class="game-card__link focus-outline" href="#">Купить</a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="advantages">
+    <div class="advantages__container">
+        <h2 class="advantages__title">Почему выбирают BestGames</h2>
+        <p class="advantages__description">Мы предлагаем уникальные возможности для геймеров, разработчиков и партнёров.</p>
+        <div class="advantages__list">
+            <details class="advantages__item">
+                <summary class="advantages__summary">
+                    <i class="advantages__icon fas fa-tag"></i>
+                    <span class="advantages__name">Привлекательные цены</span>
+                </summary>
+                <div class="advantages__content">
+                    <p>Мы сотрудничаем напрямую с разработчиками, что позволяет предлагать одни из самых низких цен на рынке. Средняя экономия пользователей составляет <strong>до 25%</strong> по сравнению с другими платформами.</p>
+                    <p>Наши алгоритмы постоянно отслеживают цены конкурентов и автоматически предлагают вам лучшее предложение.</p>
+                </div>
+            </details>
+            <details class="advantages__item">
+                <summary class="advantages__summary">
+                    <i class="advantages__icon fas fa-percentage"></i>
+                    <span class="advantages__name">Ежемесячные акции</span>
+                </summary>
+                <div class="advantages__content">
+                    <p>Каждый месяц мы проводим тематические распродажи, где вы можете приобрести топовые игры со скидками до <strong>90%</strong>.</p>
+                    <p>Подпишитесь на нашу рассылку, чтобы первыми узнавать о старте акций и получать эксклюзивные промокоды на скидки до <strong>30%</strong> на любую игру.</p>
+                    <p>Например, в декабре прошла акция "Зимние Хиты", в рамках которой было продано более <strong>100 000</strong> копий игр по сниженным ценам.</p>
+                </div>
+            </details>
+            <details class="advantages__item">
+                <summary class="advantages__summary">
+                    <i class="advantages__icon fas fa-headset"></i>
+                    <span class="advantages__name">Круглосуточная поддержка</span>
+                </summary>
+                <div class="advantages__content">
+                    <p>Наша служба поддержки работает <strong>24/7</strong> без выходных. Среднее время ответа на запрос пользователя — <strong>2 минуты</strong>.</p>
+                    <p>Вы можете связаться с нами через чат на сайте, по электронной почте или по бесплатному телефону. Мы помогаем с любыми вопросами: от установки игры до возврата средств.</p>
+                    <p>Уровень удовлетворенности клиентов нашей поддержкой составляет <strong>98,7%</strong>.</p>
+                </div>
+            </details>
+            <details class="advantages__item">
+                <summary class="advantages__summary">
+                    <i class="advantages__icon fas fa-bolt"></i>
+                    <span class="advantages__name">Быстрая покупка</span>
+                </summary>
+                <div class="advantages__content">
+                    <p>Процесс покупки максимально упрощен. Вы можете приобрести игру и получить ключ для активации в течение <strong>30 секунд</strong> после оплаты.</p>
+                    <p>Мы поддерживаем более <strong>10</strong> способов оплаты, включая банковские карты, электронные кошельки и криптовалюту.</p>
+                    <p>Среднее время активации ключа в популярных игровых клиентов (Steam, Origin, Uplay) составляет <strong>менее 1 секунды</strong>.</p>
+                </div>
+            </details>
         </div>
     </div>
 </section>
