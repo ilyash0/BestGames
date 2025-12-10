@@ -11,12 +11,13 @@
     --color-text-primary: #FFFFFF;
     --color-text-secondary: #B3B3B3;
     --color-accent: #FF3B30;
-    --color-accent-hover: #FF5C50;
+    --color-accent-hover: #ff6a5e;
     --color-accent-focus: #ff8000;
     --color-border-divider: #333333;
+    --color-secondary-button-hover: #352120;
 
     /* Typography */
-    --font-primary: "Tektur", system-ui, sans-serif; /* For headings, logos, buttons */
+    --font-primary: "Tektur", system-ui, sans-serif; /* For headings */
     --font-secondary: "Inter", system-ui, sans-serif; /* For body text, forms */
     --font-size-base: 1rem; /* 16px */
     --line-height-base: 1.5;
@@ -143,7 +144,7 @@
 }
 
 .header__theme-toggle:hover {
-    background-color: rgba(255, 59, 48, 0.1);
+    background-color: var(--color-secondary-button-hover);
     border-color: var(--color-accent);
     /*color: var(--color-accent);*/
 }
@@ -168,7 +169,6 @@
 
 .header__login-btn:hover {
     background-color: var(--color-accent-hover);
-    transform: scale(1.05);
 }
 
 .header__burger-menu {
@@ -385,7 +385,6 @@
 
 .slider__slide-link:hover {
     background-color: var(--color-accent-hover);
-    transform: scale(1.05);
 }
 
 .slider__indicators {
@@ -586,7 +585,6 @@
 .fast-search__button:hover,
 .fast-search__button:active {
     background-color: var(--color-accent-hover);
-    transform: scale(1.05);
 }
 
 .fast-search__content-layout {
@@ -689,17 +687,18 @@
     display: inline-block;
     text-decoration: none;
     padding: 0.35rem 0.6rem;
+    border: 1px solid var(--color-border-divider);
     border-radius: var(--border-radius-sm);
     background: rgba(255, 255, 255, 0.04);
     color: var(--color-text-primary);
     font-weight: 700;
     font-family: var(--font-primary), system-ui, sans-serif;
-    transition: background-color 0.12s ease, transform 0.12s ease;
+    transition: var(--transition-default);
 }
 
 .game-card__link:hover {
-    background-color: rgba(255, 255, 255, 0.06);
-    transform: translateY(-2px);
+    background-color: var(--color-secondary-button-hover);
+    border-color: var(--color-accent);
 }
 
 @media (min-width: 768px) {
@@ -808,7 +807,7 @@
 }
 
 .advantages__summary:hover {
-    background-color: rgba(255, 59, 48, 0.1);
+    background-color: var(--color-secondary-button-hover);
 }
 
 .advantages__summary::marker {
