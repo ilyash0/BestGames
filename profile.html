@@ -49,81 +49,79 @@
     </div>
 </header>
 
-<main class="main">
-    <h1>Личный кабинет</h1>
+<main class="main profile">
+    <h1 class="profile__title visually-hidden">Личный кабинет</h1>
+
     <section class="profile-info">
-        <h2 class="profile-info__title">Информация о пользователе</h2>
-        <div class="profile-info__data">
-            <p class="profile-info__item">
-                <span class="profile-info__label">E-mail:</span>
-                <span class="profile-info__value" id="user-email">gamer_pro@example.com</span>
-            </p>
-            <p class="profile-info__item">
-                <span class="profile-info__label">Фамилия:</span>
-                <span class="profile-info__value" id="user-last-name">Шмырёв</span>
-            </p>
-            <p class="profile-info__item">
-                <span class="profile-info__label">Имя:</span>
-                <span class="profile-info__value" id="user-first-name">Илья</span>
-            </p>
-            <p class="profile-info__item">
-                <span class="profile-info__label">Дата рождения:</span>
-                <span class="profile-info__value" id="user-birth-date">11.12.2006</span>
-            </p>
-            <p class="profile-info__item">
-                <span class="profile-info__label">Номер телефона:</span>
-                <span class="profile-info__value" id="user-phone">+7 (999) 123-45-67</span>
-            </p>
+        <div class="profile-info__container">
+            <h2 class="profile-info__title">Информация о пользователе</h2>
+            <ul class="profile-info__list">
+                <li class="profile-info__item">
+                    <span class="profile-info__label">E-mail:</span>
+                    <span class="profile-info__value">gamer@example.com</span>
+                </li>
+                <li class="profile-info__item">
+                    <span class="profile-info__label">Фамилия:</span>
+                    <span class="profile-info__value">Шмырёв</span>
+                </li>
+                <li class="profile-info__item">
+                    <span class="profile-info__label">Имя:</span>
+                    <span class="profile-info__value">Илья</span>
+                </li>
+                <li class="profile-info__item">
+                    <span class="profile-info__label">Дата рождения:</span>
+                    <span class="profile-info__value">11.12.2006</span>
+                </li>
+                <li class="profile-info__item">
+                    <span class="profile-info__label">Телефон:</span>
+                    <span class="profile-info__value">+7 (999) 123-45-67</span>
+                </li>
+            </ul>
         </div>
     </section>
 
     <section class="purchase-history">
-        <h2 class="purchase-history__title">История покупок</h2>
         <div class="purchase-history__container">
-            <table class="purchase-history__table">
-                <thead class="purchase-history__thead">
-                <tr class="purchase-history__row purchase-history__row--header">
-                    <th class="purchase-history__header">Дата</th>
-                    <th class="purchase-history__header">Название</th>
-                    <th class="purchase-history__header">Стоимость</th>
-                </tr>
-                </thead>
-                <tbody class="purchase-history__tbody">
-                <tr class="purchase-history__row">
-                    <td class="purchase-history__cell purchase-history__date">15.11.2024</td>
-                    <td class="purchase-history__cell purchase-history__item">The Witcher 3: Wild Hunt</td>
-                    <td class="purchase-history__cell purchase-history__price">1499 ₽</td>
-                </tr>
-                <tr class="purchase-history__row">
-                    <td class="purchase-history__cell purchase-history__date">22.10.2024</td>
-                    <td class="purchase-history__cell purchase-history__item">Cyberpunk 2077</td>
-                    <td class="purchase-history__cell purchase-history__price">2499 ₽</td>
-                </tr>
-                <tr class="purchase-history__row">
-                    <td class="purchase-history__cell purchase-history__date">30.09.2024</td>
-                    <td class="purchase-history__cell purchase-history__item">DLC: Ultimate Pack для Doom Eternal</td>
-                    <td class="purchase-history__cell purchase-history__price">999 ₽</td>
-                </tr>
-                <tr class="purchase-history__row">
-                    <td class="purchase-history__cell purchase-history__date">05.09.2024</td>
-                    <td class="purchase-history__cell purchase-history__item">Minecraft</td>
-                    <td class="purchase-history__cell purchase-history__price">799 ₽</td>
-                </tr>
-                </tbody>
-            </table>
+            <h2 class="purchase-history__title">История покупок</h2>
+            <div class="purchase-history__list">
+                <div class="purchase-history__item">
+                    <span class="purchase-history__date">12.01.2025</span>
+                    <span class="purchase-history__name">Baldur's Gate 3</span>
+                    <span class="purchase-history__price">1999 ₽</span>
+                </div>
+                <div class="purchase-history__item">
+                    <span class="purchase-history__date">09.01.2025</span>
+                    <span class="purchase-history__name">DOOM Eternal</span>
+                    <span class="purchase-history__price">999 ₽</span>
+                </div>
+                <div class="purchase-history__item">
+                    <span class="purchase-history__date">02.01.2025</span>
+                    <span class="purchase-history__name">Minecraft</span>
+                    <span class="purchase-history__price">349 ₽</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="profile-settings">
-        <h2 class="profile-settings__title">Настройки профиля</h2>
-        <div class="profile-settings__controls">
-            <button class="profile-settings__password-btn focus-outline">Сменить пароль</button>
-            <div class="profile-settings__theme-control">
-                <label class="profile-settings__theme-label">
-                    Темная тема
-                    <input class="profile-settings__theme-toggle" type="checkbox" role="switch" id="theme-toggle" aria-checked="false">
-                    <span class="profile-settings__slider"></span>
-                </label>
+        <div class="profile-settings__container">
+            <h2 class="profile-settings__title">Настройки профиля</h2>
+            <div class="profile-settings__controls">
+                <a href="#" class="profile-settings__password-btn focus-outline">
+                    Сменить пароль
+                </a>
+                <div class="profile-settings__theme">
+                    <span class="profile-settings__theme-label">Тема:</span>
+                    <label class="profile-settings__theme-option">
+                        <input type="radio" name="theme" value="dark" class="profile-settings__theme-radio focus-outline" checked>
+                        <span class="profile-settings__theme-text">Тёмная</span>
+                    </label>
+                    <label class="profile-settings__theme-option">
+                        <input type="radio" name="theme" value="light" class="profile-settings__theme-radio focus-outline">
+                        <span class="profile-settings__theme-text">Светлая</span>
+                    </label>
+                </div>
+
             </div>
         </div>
     </section>

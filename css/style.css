@@ -1844,421 +1844,288 @@
 
 
 /* PROFILE INFO BLOCK */
-.profile-info {
-    width: 100%;
-    background-color: var(--color-bg-secondary);
-    border-radius: var(--border-radius-md);
-    padding: var(--gap-md);
+.profile {
+    padding: var(--gap-lg) 0;
+}
+
+.profile-info__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--gap-sm);
     box-sizing: border-box;
+    background: transparent;
 }
 
 .profile-info__title {
-    font-family: var(--font-primary), sans-serif;
+    font-family: var(--font-primary), system-ui, sans-serif;
     font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-text-primary);
+    font-size: 1.5rem;
     margin: 0 0 var(--gap-sm) 0;
+    color: var(--color-text-primary);
     text-align: left;
 }
 
-.profile-info__data {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-xs);
+.profile-info__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-sm);
+    align-items: center;
 }
 
 .profile-info__item {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0;
-    padding: var(--gap-xs) 0;
+    gap: var(--gap-sm);
+    align-items: center;
+    justify-content: flex-start;
+    padding: calc(var(--gap-xs) * 0.5) 0;
     border-bottom: 1px solid var(--color-border-divider);
 }
 
-.profile-info__item:last-child {
-    border-bottom: none;
-}
-
 .profile-info__label {
-    font-family: var(--font-secondary), sans-serif;
-    font-weight: 600;
-    color: var(--color-text-primary);
-    margin-right: var(--gap-sm);
-    flex-shrink: 0;
+    min-width: 160px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    font-size: 0.95rem;
+    text-align: left;
 }
 
 .profile-info__value {
-    font-family: var(--font-secondary), sans-serif;
-    color: var(--color-text-secondary);
-    text-align: right;
-    flex-grow: 1;
+    color: var(--color-text-primary);
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    font-size: 1rem;
+    text-align: left;
     word-break: break-word;
 }
 
-@media (min-width: 1920px) {
-    .profile-info {
-        padding: var(--gap-lg);
-    }
-
-    .profile-info__title {
-        font-size: 1.5rem;
-    }
-
-    .profile-info__item {
-        padding: var(--gap-sm) 0;
+@media (min-width: 768px) {
+    .profile-info__list {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .profile-info__label {
-        font-size: 1rem;
+        min-width: 140px;
     }
 
-    .profile-info__value {
-        font-size: 1rem;
+    .profile__title {
+        font-size: 2rem;
+    }
+
+    .profile-info__title {
+        font-size: 1.75rem;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1919px) {
-    .profile-info {
-        padding: var(--gap-md);
+@media (min-width: 1440px) {
+    .profile-info__container {
+        max-width: 1400px;
+        padding: 0 var(--gap-md);
+    }
+
+    .profile__title {
+        font-size: 2.25rem;
     }
 
     .profile-info__title {
-        font-size: 1.375rem;
+        font-size: 2rem;
     }
+}
 
-    .profile-info__label {
-        font-size: 0.95rem;
-    }
+/* PURCHASE HISTORY BLOCK */
+.purchase-history__container {
+    max-width: 1200px;
+    margin: var(--gap-lg) auto 0 auto;
+    padding: 0 var(--gap-sm);
+    box-sizing: border-box;
+}
 
-    .profile-info__value {
-        font-size: 0.95rem;
-    }
+.purchase-history__title {
+    font-family: var(--font-primary), system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 var(--gap-sm) 0;
+    color: var(--color-text-primary);
+    text-align: left;
+}
+
+.purchase-history__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    margin: 0;
+    padding: 0;
+}
+
+.purchase-history__item {
+    display: grid;
+    grid-template-columns: 140px 1fr 110px;
+    gap: var(--gap-sm);
+    align-items: center;
+    padding: var(--gap-sm);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-divider);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-default);
+}
+
+.purchase-history__item:hover {
+    transform: translateY(-4px);
+}
+
+.purchase-history__date {
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    color: var(--color-text-secondary);
+    text-align: left;
+}
+
+.purchase-history__name {
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    text-align: left;
+    word-break: break-word;
+}
+
+.purchase-history__price {
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary) !important;
+    text-align: right;
 }
 
 @media (max-width: 767px) {
-    .profile-info {
-        padding: var(--gap-sm);
-    }
-
-    .profile-info__title {
-        font-size: 1.125rem;
-        margin-bottom: var(--gap-xs);
-    }
-
-    .profile-info__item {
-        flex-direction: column;
-        align-items: flex-start;
+    .purchase-history__item {
+        grid-template-columns: 1fr;
         gap: var(--gap-xs);
-        padding: var(--gap-xs) 0;
+        text-align: left;
     }
 
-    .profile-info__label {
-        font-size: 0.875rem;
-        margin-right: 0;
-        font-weight: 500;
-    }
-
-    .profile-info__value {
-        font-size: 0.875rem;
+    .purchase-history__price {
         text-align: left;
     }
 }
 
-
-/* PURCHASE HISTORY BLOCK */
-.purchase-history {
-    width: 100%;
-    background-color: var(--color-bg-secondary);
-    border-radius: var(--border-radius-md);
-    padding: var(--gap-md);
-    box-sizing: border-box;
-    overflow-x: auto;
+@media (min-width: 768px) and (max-width: 1023px) {
+    .purchase-history__item {
+        grid-template-columns: 120px 1fr 100px;
+    }
 }
 
-.purchase-history__title {
-    font-family: var(--font-primary), sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-text-primary);
-    margin: 0 0 var(--gap-sm) 0;
-    text-align: left;
-}
-
-.purchase-history__container {
-    overflow-x: auto;
-}
-
-.purchase-history__table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px;
-}
-
-.purchase-history__row {
-    border-bottom: 1px solid var(--color-border-divider);
-}
-
-.purchase-history__row--header {
-    background-color: var(--color-bg-main);
-}
-
-.purchase-history__header,
-.purchase-history__cell {
-    padding: var(--gap-xs) var(--gap-sm);
-    text-align: left;
-    font-family: var(--font-secondary), sans-serif;
-    vertical-align: top;
-}
-
-.purchase-history__header {
-    font-weight: 600;
-    color: var(--color-text-primary);
-    border-bottom: 2px solid var(--color-accent);
-}
-
-.purchase-history__cell {
-    color: var(--color-text-secondary);
-}
-
-.purchase-history__date {
-    white-space: nowrap;
-}
-
-.purchase-history__item {
-    width: 100%;
-}
-
-.purchase-history__price {
-    font-weight: 600;
-    color: var(--color-text-primary);
-    white-space: nowrap;
-}
-
-@media (min-width: 1920px) {
-    .purchase-history {
-        padding: var(--gap-lg);
+@media (min-width: 1440px) {
+    .purchase-history__container {
+        max-width: 1400px;
+        padding: 0 var(--gap-md);
     }
 
     .purchase-history__title {
-        font-size: 1.5rem;
-    }
-
-    .purchase-history__header,
-    .purchase-history__cell {
-        padding: var(--gap-sm) var(--gap-md);
-        font-size: 1rem;
+        font-size: 2rem;
     }
 }
-
-@media (min-width: 768px) and (max-width: 1919px) {
-    .purchase-history {
-        padding: var(--gap-md);
-    }
-
-    .purchase-history__title {
-        font-size: 1.375rem;
-    }
-
-    .purchase-history__header,
-    .purchase-history__cell {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .purchase-history {
-        padding: var(--gap-sm);
-    }
-
-    .purchase-history__title {
-        font-size: 1.125rem;
-        margin-bottom: var(--gap-xs);
-    }
-
-    .purchase-history__header,
-    .purchase-history__cell {
-        padding: var(--gap-xs);
-        font-size: 0.875rem;
-    }
-}
-
 
 /* PROFILE SETTINGS BLOCK */
-
-.profile-settings {
-    width: 100%;
-    background-color: var(--color-bg-secondary);
-    border-radius: var(--border-radius-md);
-    padding: var(--gap-md);
+.profile-settings__container {
+    max-width: 1200px;
+    margin: var(--gap-lg) auto;
+    padding: 0 var(--gap-sm) var(--gap-lg) var(--gap-sm);
     box-sizing: border-box;
+    background: transparent;
 }
 
 .profile-settings__title {
-    font-family: var(--font-primary), sans-serif;
+    font-family: var(--font-primary), system-ui, sans-serif;
     font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-text-primary);
+    font-size: 1.5rem;
     margin: 0 0 var(--gap-sm) 0;
+    color: var(--color-text-primary);
     text-align: left;
 }
 
 .profile-settings__controls {
     display: flex;
-    flex-direction: column; /* Элементы друг под другом */
-    gap: var(--gap-md); /* Отступ между кнопкой и переключателем темы */
-    align-items: flex-start; /* Выравнивание по левому краю */
+    flex-direction: column;
+    gap: var(--gap-md);
+    align-items: flex-start;
 }
 
+
 .profile-settings__password-btn {
-    background-color: var(--color-accent);
-    color: var(--color-text-primary);
-    border: none;
     padding: var(--gap-xs) var(--gap-sm);
     font-family: var(--font-primary), sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-accent);
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     transition: var(--transition-default);
-    align-self: stretch; /* Растягиваем на всю ширину контейнера */
-    max-width: 300px; /* Ограничиваем максимальную ширину */
+    text-decoration: none;
 }
 
 .profile-settings__password-btn:hover {
     background-color: var(--color-accent-hover);
-    transform: scale(1.02);
 }
 
-.profile-settings__theme-control {
+.profile-settings__theme {
     display: flex;
+    gap: var(--gap-sm);
     align-items: center;
-    gap: var(--gap-sm); /* Отступ между лейблом и переключателем */
-    align-self: stretch; /* Растягиваем на всю ширину контейнера */
-    max-width: 300px; /* Ограничиваем максимальную ширину */
+    flex-wrap: wrap;
 }
 
 .profile-settings__theme-label {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-xs);
-    cursor: pointer;
-    font-family: var(--font-secondary), sans-serif;
-    font-size: 1rem;
+    font-family: var(--font-secondary), system-ui, sans-serif;
     color: var(--color-text-secondary);
-    flex-grow: 1; /* Лейбл занимает оставшееся пространство */
-    margin: 0; /* Убираем стандартный отступ */
+    margin-right: var(--gap-sm);
 }
 
-.profile-settings__theme-toggle {
-    opacity: 0; /* Скрываем чекбокс */
-    width: 0;
-    height: 0;
-}
-
-.profile-settings__slider {
-    position: relative;
+.profile-settings__theme-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     cursor: pointer;
-    width: 50px;
-    height: 24px;
-    background-color: var(--color-border-divider);
-    border-radius: 12px;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
     transition: var(--transition-default);
+    user-select: none;
 }
 
-.profile-settings__slider::before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: var(--color-text-primary);
-    border-radius: 50%;
-    transition: var(--transition-default);
+.profile-settings__theme-radio {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-accent);
+    cursor: pointer;
 }
 
-.profile-settings__theme-toggle:checked + .profile-settings__slider {
-    background-color: var(--color-accent);
+.profile-settings__theme-text {
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    color: var(--color-text-primary);
 }
 
-.profile-settings__theme-toggle:checked + .profile-settings__slider::before {
-    transform: translateX(26px);
+@media (min-width: 768px) {
+    .profile-settings__controls {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .profile-settings__theme {
+        margin-left: var(--gap-md);
+    }
+
+    .profile__title {
+        font-size: 2rem;
+    }
 }
 
-/* Стили для десктопной версии (ширина 1920px и выше) */
-@media (min-width: 1920px) {
-    .profile-settings {
-        padding: var(--gap-lg);
+@media (min-width: 1440px) {
+    .profile-settings__container {
+        max-width: 1400px;
+        padding: 0 var(--gap-md) var(--gap-lg) var(--gap-md);
     }
 
     .profile-settings__title {
-        font-size: 1.5rem;
-    }
-
-    .profile-settings__controls {
-        gap: var(--gap-lg); /* Больше отступа между элементами */
-    }
-
-    .profile-settings__password-btn {
-        font-size: 1.125rem; /* Увеличиваем шрифт */
-        padding: calc(var(--gap-xs) * 1.2) calc(var(--gap-sm) * 1.2); /* Чуть больше паддингов */
-    }
-
-    .profile-settings__theme-label {
-        font-size: 1.125rem; /* Увеличиваем шрифт */
-    }
-}
-
-/* Стили для планшетной версии (от 768px до 1919px) */
-@media (min-width: 768px) and (max-width: 1919px) {
-    .profile-settings {
-        padding: var(--gap-md);
-    }
-
-    .profile-settings__title {
-        font-size: 1.375rem;
-    }
-
-    .profile-settings__controls {
-        gap: var(--gap-md); /* Умеренный отступ между элементами */
-    }
-
-    .profile-settings__password-btn {
-        font-size: 1rem; /* Основной размер */
-    }
-
-    .profile-settings__theme-label {
-        font-size: 1rem; /* Основной размер */
-    }
-}
-
-/* Стили для мобильной версии (до 767px) */
-@media (max-width: 767px) {
-    .profile-settings {
-        padding: var(--gap-sm);
-    }
-
-    .profile-settings__title {
-        font-size: 1.125rem;
-        margin-bottom: var(--gap-xs);
-    }
-
-    .profile-settings__controls {
-        gap: var(--gap-sm); /* Меньше отступа между элементами */
-    }
-
-    .profile-settings__password-btn {
-        font-size: 1rem; /* Основной размер */
-        padding: var(--gap-xs) var(--gap-sm); /* Стандартные паддинги */
-    }
-
-    .profile-settings__theme-label {
-        font-size: 0.875rem; /* Уменьшаем шрифт */
-        gap: var(--gap-xs); /* Меньше отступа в лейбле */
-    }
-
-    .profile-settings__theme-control {
-        max-width: 100%; /* На мобильных — вся ширина */
+        font-size: 2rem;
     }
 }
