@@ -2,9 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+  <title>BestGames | Зарегистрироваться</title>
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="BestGames — маркетплейс для поиска и покупки компьютерных игр и внутриигровых предметов. Лучшие цены, ежемесячные акции, круглосуточная поддержка.">
+  <meta name="keywords"
+        content="игры, скачать игры, купить игры, компьютерные игры, маркетплейс, внутриигровые предметы, Steam, GOG, Epic Games, новинки, скидки, акции">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  <script src="https://kit.fontawesome.com/abcd5a5c4d.js" crossorigin="anonymous"></script>
+</head>
+<body class="page">
+<header class="header">
+  <div class="header__container">
+    <a href="index.html" class="header__logo-link focus-outline">
+      <img src="img/logo.svg" alt="BestGames" class="header__logo">
+    </a>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="index.html#search" class="header__nav-link focus-outline">Поиск</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="profile.html" class="header__nav-link focus-outline">Личный кабинет</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="catalog.html" class="header__nav-link focus-outline">Каталог игр</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__auth-theme-wrapper">
+      <a href="login.html" class="header__login-btn focus-outline">Войти</a>
+      <button class="header__theme-toggle focus-outline" aria-label="Переключить тему">
+        <i class="header__theme-icon fas fa-moon"></i>
+      </button>
+    </div>
+    <button class="header__burger-menu focus-outline" aria-label="Открыть меню">
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+    </button>
+  </div>
+</header>
+
+<main class="main">
+  <section class="register" aria-labelledby="register-title">
+    <div class="register__container">
+      <h1 class="register__title" id="register-title">Регистрация</h1>
+      <form class="register__form" action="#" method="post">
+        <div class="register__input-group">
+          <label class="register__label" for="register-email">E-mail</label>
+          <input class="register__input focus-outline" id="register-email" type="email" name="email" required>
+        </div>
+        <div class="register__input-group">
+          <label class="register__label" for="register-last-name">Фамилия</label>
+          <input class="register__input focus-outline" id="register-last-name" type="text" name="last_name" required>
+        </div>
+        <div class="register__input-group">
+          <label class="register__label" for="register-first-name">Имя</label>
+          <input class="register__input focus-outline" id="register-first-name" type="text" name="first_name" required>
+        </div>
+        <div class="register__input-group">
+          <label class="register__label" for="register-birth-date">Дата рождения</label>
+          <input class="register__input focus-outline" id="register-birth-date" type="date" name="birth_date" required>
+        </div>
+        <div class="register__input-group">
+          <label class="register__label" for="register-phone">Номер телефона</label>
+          <input class="register__input focus-outline" id="register-phone" type="tel" name="phone" required>
+        </div>
+        <div class="register__input-group">
+          <label class="register__label" for="register-password">Пароль</label>
+          <input class="register__input focus-outline" id="register-password" type="password" name="password" required>
+        </div>
+        <div class="register__input-group">
+          <label class="register__label" for="register-password-confirm">Повторите пароль</label>
+          <input class="register__input focus-outline" id="register-password-confirm" type="password" name="password_confirm" required>
+        </div>
+        <div class="register__checkbox-group">
+          <label class="register__checkbox-label">
+            <input class="register__checkbox focus-outline" type="checkbox" name="privacy_agreement" required>
+            <span class="register__checkbox-text">Согласен на обработку персональных данных</span>
+          </label>
+        </div>
+        <button class="register__submit-btn focus-outline" type="submit">Зарегистрироваться</button>
+      </form>
+      <div class="register__links">
+        <a class="register__link focus-outline" href="login.html">Уже есть аккаунт? Войти</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="footer__container">
+    <div class="footer__top">
+      <div class="footer__contacts">
+        <h3 class="footer__section-title">Контакты</h3>
+        <a href="tel:88009995599" class="footer__contact-link focus-outline">8-800-999-55-99</a>
+        <a href="mailto:best@games.ru" class="footer__contact-link focus-outline">best@games.ru</a>
+      </div>
+      <nav class="footer__nav">
+        <h3 class="footer__section-title">Навигация</h3>
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item"><a href="index.html" class="footer__nav-link focus-outline">Главная</a></li>
+          <li class="footer__nav-item"><a href="register.html" class="footer__nav-link focus-outline">Регистрация</a></li>
+          <li class="footer__nav-item"><a href="login.html" class="footer__nav-link focus-outline">Авторизация</a></li>
+          <li class="footer__nav-item"><a href="profile.html" class="footer__nav-link focus-outline">Личный кабинет</a></li>
+          <li class="footer__nav-item"><a href="index.html#search" class="footer__nav-link focus-outline">Поиск</a></li>
+        </ul>
+      </nav>
+      <div class="footer__info">
+        <h3 class="footer__section-title">Информация</h3>
+        <ul class="footer__info-list">
+          <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">Клиентам</a></li>
+          <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">Партнерам</a></li>
+          <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">О нас</a></li>
+          <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2025 BestGames. Все права защищены.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
