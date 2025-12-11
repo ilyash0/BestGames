@@ -2082,3 +2082,183 @@
         font-size: 0.875rem;
     }
 }
+
+
+/* PROFILE SETTINGS BLOCK */
+
+.profile-settings {
+    width: 100%;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: var(--gap-md);
+    box-sizing: border-box;
+}
+
+.profile-settings__title {
+    font-family: var(--font-primary), sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--gap-sm) 0;
+    text-align: left;
+}
+
+.profile-settings__controls {
+    display: flex;
+    flex-direction: column; /* Элементы друг под другом */
+    gap: var(--gap-md); /* Отступ между кнопкой и переключателем темы */
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.profile-settings__password-btn {
+    background-color: var(--color-accent);
+    color: var(--color-text-primary);
+    border: none;
+    padding: var(--gap-xs) var(--gap-sm);
+    font-family: var(--font-primary), sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-default);
+    align-self: stretch; /* Растягиваем на всю ширину контейнера */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+}
+
+.profile-settings__password-btn:hover {
+    background-color: var(--color-accent-hover);
+    transform: scale(1.02);
+}
+
+.profile-settings__theme-control {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm); /* Отступ между лейблом и переключателем */
+    align-self: stretch; /* Растягиваем на всю ширину контейнера */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+}
+
+.profile-settings__theme-label {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    cursor: pointer;
+    font-family: var(--font-secondary), sans-serif;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    flex-grow: 1; /* Лейбл занимает оставшееся пространство */
+    margin: 0; /* Убираем стандартный отступ */
+}
+
+.profile-settings__theme-toggle {
+    opacity: 0; /* Скрываем чекбокс */
+    width: 0;
+    height: 0;
+}
+
+.profile-settings__slider {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 24px;
+    background-color: var(--color-border-divider);
+    border-radius: 12px;
+    transition: var(--transition-default);
+}
+
+.profile-settings__slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--color-text-primary);
+    border-radius: 50%;
+    transition: var(--transition-default);
+}
+
+.profile-settings__theme-toggle:checked + .profile-settings__slider {
+    background-color: var(--color-accent);
+}
+
+.profile-settings__theme-toggle:checked + .profile-settings__slider::before {
+    transform: translateX(26px);
+}
+
+/* Стили для десктопной версии (ширина 1920px и выше) */
+@media (min-width: 1920px) {
+    .profile-settings {
+        padding: var(--gap-lg);
+    }
+
+    .profile-settings__title {
+        font-size: 1.5rem;
+    }
+
+    .profile-settings__controls {
+        gap: var(--gap-lg); /* Больше отступа между элементами */
+    }
+
+    .profile-settings__password-btn {
+        font-size: 1.125rem; /* Увеличиваем шрифт */
+        padding: calc(var(--gap-xs) * 1.2) calc(var(--gap-sm) * 1.2); /* Чуть больше паддингов */
+    }
+
+    .profile-settings__theme-label {
+        font-size: 1.125rem; /* Увеличиваем шрифт */
+    }
+}
+
+/* Стили для планшетной версии (от 768px до 1919px) */
+@media (min-width: 768px) and (max-width: 1919px) {
+    .profile-settings {
+        padding: var(--gap-md);
+    }
+
+    .profile-settings__title {
+        font-size: 1.375rem;
+    }
+
+    .profile-settings__controls {
+        gap: var(--gap-md); /* Умеренный отступ между элементами */
+    }
+
+    .profile-settings__password-btn {
+        font-size: 1rem; /* Основной размер */
+    }
+
+    .profile-settings__theme-label {
+        font-size: 1rem; /* Основной размер */
+    }
+}
+
+/* Стили для мобильной версии (до 767px) */
+@media (max-width: 767px) {
+    .profile-settings {
+        padding: var(--gap-sm);
+    }
+
+    .profile-settings__title {
+        font-size: 1.125rem;
+        margin-bottom: var(--gap-xs);
+    }
+
+    .profile-settings__controls {
+        gap: var(--gap-sm); /* Меньше отступа между элементами */
+    }
+
+    .profile-settings__password-btn {
+        font-size: 1rem; /* Основной размер */
+        padding: var(--gap-xs) var(--gap-sm); /* Стандартные паддинги */
+    }
+
+    .profile-settings__theme-label {
+        font-size: 0.875rem; /* Уменьшаем шрифт */
+        gap: var(--gap-xs); /* Меньше отступа в лейбле */
+    }
+
+    .profile-settings__theme-control {
+        max-width: 100%; /* На мобильных — вся ширина */
+    }
+}
