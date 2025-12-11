@@ -1841,3 +1841,126 @@
         margin-top: var(--gap-sm);
     }
 }
+
+
+/* PROFILE INFO BLOCK */
+.profile-info {
+    width: 100%;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: var(--gap-md);
+    box-sizing: border-box;
+}
+
+.profile-info__title {
+    font-family: var(--font-primary), sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--gap-sm) 0;
+    text-align: left;
+}
+
+.profile-info__data {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+}
+
+.profile-info__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: var(--gap-xs) 0;
+    border-bottom: 1px solid var(--color-border-divider);
+}
+
+.profile-info__item:last-child {
+    border-bottom: none;
+}
+
+.profile-info__label {
+    font-family: var(--font-secondary), sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-right: var(--gap-sm);
+    flex-shrink: 0;
+}
+
+.profile-info__value {
+    font-family: var(--font-secondary), sans-serif;
+    color: var(--color-text-secondary);
+    text-align: right;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+@media (min-width: 1920px) {
+    .profile-info {
+        padding: var(--gap-lg);
+    }
+
+    .profile-info__title {
+        font-size: 1.5rem;
+    }
+
+    .profile-info__item {
+        padding: var(--gap-sm) 0;
+    }
+
+    .profile-info__label {
+        font-size: 1rem;
+    }
+
+    .profile-info__value {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1919px) {
+    .profile-info {
+        padding: var(--gap-md);
+    }
+
+    .profile-info__title {
+        font-size: 1.375rem;
+    }
+
+    .profile-info__label {
+        font-size: 0.95rem;
+    }
+
+    .profile-info__value {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-info {
+        padding: var(--gap-sm);
+    }
+
+    .profile-info__title {
+        font-size: 1.125rem;
+        margin-bottom: var(--gap-xs);
+    }
+
+    .profile-info__item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--gap-xs);
+        padding: var(--gap-xs) 0;
+    }
+
+    .profile-info__label {
+        font-size: 0.875rem;
+        margin-right: 0;
+        font-weight: 500;
+    }
+
+    .profile-info__value {
+        font-size: 0.875rem;
+        text-align: left;
+    }
+}
