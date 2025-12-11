@@ -2,9 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>BestGames</title>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="BestGames — маркетплейс для поиска и покупки компьютерных игр и внутриигровых предметов. Лучшие цены, ежемесячные акции, круглосуточная поддержка.">
+    <meta name="keywords"
+          content="игры, скачать игры, купить игры, компьютерные игры, маркетплейс, внутриигровые предметы, Steam, GOG, Epic Games, новинки, скидки, акции">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/abcd5a5c4d.js" crossorigin="anonymous"></script>
+</head>
+<body class="page">
+<header class="header">
+    <div class="header__container">
+        <a href="index.html" class="header__logo-link focus-outline">
+            <img src="img/logo.svg" alt="BestGames" class="header__logo">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item">
+                    <a href="index.html#search" class="header__nav-link focus-outline">Поиск</a>
+                </li>
+                <li class="header__nav-item">
+                    <a href="profile.html" class="header__nav-link focus-outline">Личный кабинет</a>
+                </li>
+                <li class="header__nav-item">
+                    <a href="catalog.html" class="header__nav-link focus-outline">Каталог игр</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__auth-theme-wrapper">
+            <a href="login.html" class="header__login-btn focus-outline">Войти</a>
+            <button class="header__theme-toggle focus-outline" aria-label="Переключить тему">
+                <i class="header__theme-icon fas fa-moon"></i>
+            </button>
+        </div>
+        <button class="header__burger-menu focus-outline" aria-label="Открыть меню">
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+    </div>
+</header>
+
+<main class="main">
+    <section class="login" aria-labelledby="login-title">
+        <div class="login__container">
+            <h1 class="login__title" id="login-title">Вход в аккаунт</h1>
+            <form class="login__form" action="#" method="post">
+                <div class="login__input-group">
+                    <label class="login__label" for="login-email">E-mail</label>
+                    <input class="login__input focus-outline" id="login-email" type="email" name="email" required>
+                </div>
+
+                <div class="login__input-group">
+                    <label class="login__label" for="login-password">Пароль</label>
+                    <input class="login__input focus-outline" id="login-password" type="password" name="password" required>
+                </div>
+
+                <button class="login__submit-btn focus-outline" type="submit">Войти</button>
+            </form>
+            <div class="login__links">
+                <a class="login__link focus-outline" href="register.html">Нет аккаунта? Зарегистрироваться</a>
+                <a class="login__link focus-outline" href="#">Забыли пароль?</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" id="footer">
+    <div class="footer__container">
+        <div class="footer__top">
+            <div class="footer__contacts">
+                <h3 class="footer__section-title">Контакты</h3>
+                <a href="tel:88009995599" class="footer__contact-link focus-outline">8-800-999-55-99</a>
+                <a href="mailto:best@games.ru" class="footer__contact-link focus-outline">best@games.ru</a>
+            </div>
+            <nav class="footer__nav">
+                <h3 class="footer__section-title">Навигация</h3>
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="index.html" class="footer__nav-link focus-outline">Главная</a></li>
+                    <li class="footer__nav-item"><a href="register.html" class="footer__nav-link focus-outline">Регистрация</a></li>
+                    <li class="footer__nav-item"><a href="login.html" class="footer__nav-link focus-outline">Авторизация</a></li>
+                    <li class="footer__nav-item"><a href="profile.html" class="footer__nav-link focus-outline">Личный кабинет</a></li>
+                    <li class="footer__nav-item"><a href="index.html#search" class="footer__nav-link focus-outline">Поиск</a></li>
+                </ul>
+            </nav>
+            <div class="footer__info">
+                <h3 class="footer__section-title">Информация</h3>
+                <ul class="footer__info-list">
+                    <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">Клиентам</a></li>
+                    <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">Партнерам</a></li>
+                    <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">О нас</a></li>
+                    <li class="footer__info-item"><a href="#" class="footer__info-link focus-outline">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">&copy; 2025 BestGames. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
