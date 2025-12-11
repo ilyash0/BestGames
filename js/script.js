@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         touchStartY = t.clientY;
         isTouching = true;
         stopAutoSlide();
-    }, { passive: true });
+    }, {passive: true});
 
     track.addEventListener('touchmove', (event) => {
         if (!isTouching || !event.touches || event.touches.length === 0) return;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > horizontalDetectionThreshold) {
             event.preventDefault();
         }
-    }, { passive: false });
+    }, {passive: false});
 
     track.addEventListener('touchend', (event) => {
         if (!isTouching) return;
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         stopAutoSlide();
         startAutoSlide(slideIntervalTime);
-    }, { passive: true });
+    }, {passive: true});
 
     slider.addEventListener('mouseenter', () => {
         stopAutoSlide();
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
         themeIcon.classList.add('fa-sun');
     }
 
-    themeToggleBtn.addEventListener('click', function() {
+    themeToggleBtn.addEventListener('click', function () {
         htmlElement.classList.toggle('theme-light');
 
         if (htmlElement.classList.contains('theme-light')) {
