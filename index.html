@@ -93,58 +93,71 @@
         </div>
     </section>
 
-    <section class="fast-search" id="search">
-        <div class="fast-search__container">
-            <h2 class="fast-search__title">Быстрый поиск</h2>
-            <form class="fast-search__form">
-                <div class="fast-search__input-wrapper">
-                    <input
-                            class="fast-search__input"
-                            type="search"
-                            name="q"
-                            placeholder="Введите название игры..."
-                            autocomplete="off"
-                            aria-label="Поиск игр по названию"
-                    >
-                    <button class="fast-search__button focus-outline" type="submit">
+    <section class="search" id="search">
+        <div class="search__container">
+            <h2 class="search__title">Быстрый поиск</h2>
+            <form class="search__form">
+                <div class="search__input-wrapper">
+                    <input class="search__input" type="search"
+                           name="q" placeholder="Введите название игры..."
+                           autocomplete="off" aria-label="Поиск игр по названию">
+                    <button class="search__button focus-outline" type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
             </form>
-            <div class="fast-search__content-layout">
-                <aside class="fast-search__filters">
-                    <h3 class="fast-search__filters-title">Фильтры</h3>
-                    <ul class="fast-search__filters-list">
-                        <li class="fast-search__filter-option">
-                            <label class="fast-search__filter-label">
-                                <input class="fast-search__filter-checkbox focus-outline" type="checkbox" name="genre"
-                                       value="action">
-                                Шутер от первого лица
-                            </label>
-                        </li>
-                        <li class="fast-search__filter-option">
-                            <label class="fast-search__filter-label">
-                                <input class="fast-search__filter-checkbox focus-outline" type="checkbox" name="genre"
-                                       value="rpg"> Классическая RPG
-                            </label>
-                        </li>
-                        <li class="fast-search__filter-option">
-                            <label class="fast-search__filter-label">
-                                <input class="fast-search__filter-checkbox focus-outline" type="checkbox" name="genre"
-                                       value="strategy">
-                                Песочница
-                            </label>
-                        </li>
-                        <li class="fast-search__filter-option">
-                            <label class="fast-search__filter-label">
-                                <input class="fast-search__filter-checkbox focus-outline" type="checkbox" name="genre"
-                                       value="indie">
-                                Выживание
-                            </label>
-                        </li>
-                    </ul>
+            <div class="search__content-layout">
+                <aside class="search__filters">
+                    <div class="search__filters-header">
+                        <h3 class="search__filters-title" id="filters-title">Фильтры</h3>
+                        <div class="search__filters-controls">
+                            <button class="search__filters-toggle focus-outline" type="button">
+                                <i class="fas fa-sliders-h"></i>
+                                <span class="search__filters-toggle-text">Свернуть</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="search__filters-body" id="filters-body">
+                        <div class="search__filters-group">
+                            <h4 class="search__filters-group-title">Жанры</h4>
+                            <ul class="search__filters-list">
+                                <li class="search__filter-option">
+                                    <label class="search__filter-label">
+                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
+                                               name="genre" value="action">
+                                        <span class="search__filter-text">Шутер от первого лица</span>
+                                    </label>
+                                </li>
+                                <li class="search__filter-option">
+                                    <label class="search__filter-label">
+                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
+                                               name="genre" value="rpg">
+                                        <span class="search__filter-text">Классическая RPG</span>
+                                    </label>
+                                </li>
+                                <li class="search__filter-option">
+                                    <label class="search__filter-label">
+                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
+                                               name="genre" value="sandbox">
+                                        <span class="search__filter-text">Песочница</span>
+                                    </label>
+                                </li>
+                                <li class="search__filter-option">
+                                    <label class="search__filter-label">
+                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
+                                               name="genre" value="survival">
+                                        <span class="search__filter-text">Выживание</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="search__filters-actions">
+                            <button class="search__filters-reset focus-outline" type="button">Сбросить</button>
+                            <button class="search__filters-apply focus-outline" type="button">Применить</button>
+                        </div>
+                    </div>
                 </aside>
-                <div class="fast-search__results">
+                <div class="search__results">
                     <div class="game-card">
                         <img class="game-card__image" src="./img/doom-dark-ages-square.webp"
                              alt="Обложка игры 'Example Game 1'">

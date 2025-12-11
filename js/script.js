@@ -172,3 +172,129 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelector('.search__filters');
+    const filtersBody = document.getElementById('filters-body');
+    const toggleBtn = document.querySelector('.search__filters-toggle');
+    const resetBtn = document.querySelector('.search__filters-reset');
+    const applyBtn = document.querySelector('.search__filters-apply');
+
+    const checkboxes = filters ? Array.from(filters.querySelectorAll('.search__filter-checkbox')) : [];
+    const ratingRadios = filters ? Array.from(filters.querySelectorAll('.search__rating-radio')) : [];
+    const ratingLabels = ratingRadios.map(r => r.closest('.search__rating-option'));
+    const developerSelect = filters ? filters.querySelector('.search__developer-select') : null;
+    const priceMin = filters ? filters.querySelector('input[name="price_min"]') : null;
+    const priceMax = filters ? filters.querySelector('input[name="price_max"]') : null;
+
+    if (!filters || !filtersBody || !toggleBtn) return;
+
+    function expandFilters() {
+        filters.classList.remove('search__filters--collapsed');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.querySelector('.search__filters-toggle-text').textContent = 'Свернуть';
+
+        const full = filtersBody.scrollHeight;
+        filtersBody.style.maxHeight = full + 'px';
+
+        const onTransitionEnd = function (e) {
+            if (e.target !== filtersBody) return;
+            filtersBody.style.maxHeight = 'none';
+            filtersBody.removeEventListener('transitionend', onTransitionEnd);
+        };
+        filtersBody.addEventListener('transitionend', onTransitionEnd);
+    }
+
+    function collapseFilters() {
+        const current = filtersBody.scrollHeight || filtersBody.offsetHeight;
+        filtersBody.style.maxHeight = current + 'px';
+
+        void filtersBody.offsetHeight;
+
+        filtersBody.style.maxHeight = '0px';
+        filters.classList.add('search__filters--collapsed');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.querySelector('.search__filters-toggle-text').textContent = 'Развернуть';
+    }
+
+    if (!filters.classList.contains('search__filters--collapsed')) {
+        filtersBody.style.maxHeight = filtersBody.scrollHeight + 'px';
+        setTimeout(() => {
+            filtersBody.style.maxHeight = 'none';
+        }, 350);
+    } else {
+        filtersBody.style.maxHeight = '0px';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        const isCollapsed = filters.classList.contains('search__filters--collapsed');
+        if (isCollapsed) {
+            expandFilters();
+        } else {
+            collapseFilters();
+        }
+    });
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        if (filters.classList.contains('search__filters--collapsed')) return;
+        filtersBody.style.maxHeight = filtersBody.scrollHeight + 'px';
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            filtersBody.style.maxHeight = 'none';
+        }, 220);
+    });
+
+    checkboxes.forEach(ch => {
+        const label = ch.closest('.search__filter-label');
+        if (label) {
+            label.classList.toggle('search__filter-label--checked', ch.checked);
+            ch.addEventListener('change', () => {
+                label.classList.toggle('search__filter-label--checked', ch.checked);
+            });
+        }
+    });
+
+    ratingRadios.forEach(r => {
+        const label = r.closest('.search__rating-option');
+        if (label) label.classList.toggle('search__rating-option--selected', r.checked);
+        r.addEventListener('change', () => {
+            ratingLabels.forEach(l => l.classList.remove('search__rating-option--selected'));
+            const sel = r.closest('.search__rating-option');
+            if (sel) sel.classList.add('search__rating-option--selected');
+        });
+    });
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            checkboxes.forEach(ch => {
+                ch.checked = false;
+                const label = ch.closest('.search__filter-label');
+                if (label) label.classList.remove('search__filter-label--checked');
+            });
+            ratingRadios.forEach(r => r.checked = false);
+            ratingLabels.forEach(l => l.classList.remove('search__rating-option--selected'));
+            if (developerSelect) developerSelect.value = '';
+            if (priceMin) priceMin.value = '';
+            if (priceMax) priceMax.value = '';
+        });
+    }
+
+    if (applyBtn) {
+        applyBtn.addEventListener('click', () => {
+            const activeGenres = checkboxes.filter(c => c.checked).map(c => c.value);
+            const rating = ratingRadios.find(r => r.checked)?.value || '';
+            const developer = developerSelect ? developerSelect.value : '';
+            const minPrice = priceMin ? priceMin.value : '';
+            const maxPrice = priceMax ? priceMax.value : '';
+
+            console.log({ activeGenres, rating, developer, minPrice, maxPrice });
+
+            if (window.innerWidth < 768 && !filters.classList.contains('search__filters--collapsed')) {
+                collapseFilters();
+            }
+        });
+    }
+});
+
