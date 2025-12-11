@@ -1964,3 +1964,121 @@
         text-align: left;
     }
 }
+
+
+/* PURCHASE HISTORY BLOCK */
+.purchase-history {
+    width: 100%;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: var(--gap-md);
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.purchase-history__title {
+    font-family: var(--font-primary), sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--gap-sm) 0;
+    text-align: left;
+}
+
+.purchase-history__container {
+    overflow-x: auto;
+}
+
+.purchase-history__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.purchase-history__row {
+    border-bottom: 1px solid var(--color-border-divider);
+}
+
+.purchase-history__row--header {
+    background-color: var(--color-bg-main);
+}
+
+.purchase-history__header,
+.purchase-history__cell {
+    padding: var(--gap-xs) var(--gap-sm);
+    text-align: left;
+    font-family: var(--font-secondary), sans-serif;
+    vertical-align: top;
+}
+
+.purchase-history__header {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.purchase-history__cell {
+    color: var(--color-text-secondary);
+}
+
+.purchase-history__date {
+    white-space: nowrap;
+}
+
+.purchase-history__item {
+    width: 100%;
+}
+
+.purchase-history__price {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+}
+
+@media (min-width: 1920px) {
+    .purchase-history {
+        padding: var(--gap-lg);
+    }
+
+    .purchase-history__title {
+        font-size: 1.5rem;
+    }
+
+    .purchase-history__header,
+    .purchase-history__cell {
+        padding: var(--gap-sm) var(--gap-md);
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1919px) {
+    .purchase-history {
+        padding: var(--gap-md);
+    }
+
+    .purchase-history__title {
+        font-size: 1.375rem;
+    }
+
+    .purchase-history__header,
+    .purchase-history__cell {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .purchase-history {
+        padding: var(--gap-sm);
+    }
+
+    .purchase-history__title {
+        font-size: 1.125rem;
+        margin-bottom: var(--gap-xs);
+    }
+
+    .purchase-history__header,
+    .purchase-history__cell {
+        padding: var(--gap-xs);
+        font-size: 0.875rem;
+    }
+}
