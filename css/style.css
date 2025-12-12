@@ -1928,6 +1928,15 @@
     gap: var(--gap-xs);
 }
 
+.register__input-group--required .register__label::after {
+    content: "*";
+    color: var(--color-accent);
+    margin-left: 0.35rem;
+    font-weight: 700;
+    font-family: var(--font-secondary), sans-serif;
+    font-size: 0.95rem;
+}
+
 .register__label {
     font-family: var(--font-secondary), sans-serif;
     font-size: 0.875rem;
@@ -1977,6 +1986,14 @@
 
 .register__checkbox-text {
     flex-grow: 1;
+}
+
+.register__note {
+    margin: 0 0 var(--gap-sm) 0;
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    text-align: left;
 }
 
 .register__submit-btn {

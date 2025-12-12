@@ -70,31 +70,31 @@
     <div class="register__container">
       <h1 class="register__title">Регистрация</h1>
       <form class="register__form" action="#" method="post">
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required ">
           <label class="register__label" for="register-email">E-mail</label>
           <input class="register__input focus-outline" id="register-email" type="email" name="email" required>
         </div>
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required">
           <label class="register__label" for="register-last-name">Фамилия</label>
           <input class="register__input focus-outline" id="register-last-name" type="text" name="last_name" required>
         </div>
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required">
           <label class="register__label" for="register-first-name">Имя</label>
           <input class="register__input focus-outline" id="register-first-name" type="text" name="first_name" required>
         </div>
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required">
           <label class="register__label" for="register-birth-date">Дата рождения</label>
           <input class="register__input focus-outline" id="register-birth-date" type="date" name="birth_date" required>
         </div>
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required">
           <label class="register__label" for="register-phone">Номер телефона</label>
           <input class="register__input focus-outline" id="register-phone" type="tel" name="phone" required>
         </div>
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required">
           <label class="register__label" for="register-password">Пароль</label>
           <input class="register__input focus-outline" id="register-password" type="password" name="password" required>
         </div>
-        <div class="register__input-group">
+        <div class="register__input-group register__input-group--required">
           <label class="register__label" for="register-password-confirm">Повторите пароль</label>
           <input class="register__input focus-outline" id="register-password-confirm" type="password" name="password_confirm" required>
         </div>
@@ -104,6 +104,9 @@
             <span class="register__checkbox-text">Согласен на обработку персональных данных</span>
           </label>
         </div>
+        <p class="register__note">
+          Поля, отмеченные <span class="admin-form__required-symbol">*</span>, обязательны для заполнения.
+        </p>
         <button class="register__submit-btn focus-outline" type="submit">Зарегистрироваться</button>
       </form>
       <div class="register__links">
