@@ -337,7 +337,7 @@
     width: 2em;
     height: 2em;
     border: none;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0, 0, 0, 0.35);
     color: var(--color-text-primary);
     font-size: 1.25rem;
     border-radius: 50%;
@@ -351,7 +351,7 @@
 }
 
 .slider__control:hover {
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
     transform: translateY(-50%) scale(1.05);
 }
 
@@ -663,8 +663,8 @@
     justify-content: space-between;
     padding: calc(var(--gap-sm) * 0.9) var(--gap-sm);
     gap: var(--gap-sm);
-    border-bottom: 1px solid rgba(255,255,255,0.02);
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
 }
 
 .search__filters-title {
@@ -732,7 +732,7 @@
     user-select: none;
     transition: var(--transition-default);
     border: 1px solid transparent;
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
     color: var(--color-text-secondary);
     font-family: var(--font-secondary), sans-serif;
     font-size: 0.95rem;
@@ -747,13 +747,13 @@
 }
 
 .search__filter-label:hover {
-    background-color: rgba(255,255,255,0.02);
+    background-color: rgba(255, 255, 255, 0.02);
     color: var(--color-text-primary);
 }
 
 .search__filter-label--checked {
-    background-color: rgba(255,59,48,0.10);
-    border-color: rgba(255,59,48,0.12);
+    background-color: rgba(255, 59, 48, 0.10);
+    border-color: rgba(255, 59, 48, 0.12);
     color: var(--color-text-primary);
 }
 
@@ -769,8 +769,8 @@
 .search__filters-apply {
     padding: 0.5rem 0.8rem;
     border-radius: var(--border-radius-md);
-    border: 1px solid rgba(255,255,255,0.04);
-    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.02);
     color: var(--color-text-primary);
     font-family: var(--font-secondary), sans-serif;
     font-weight: 700;
@@ -779,7 +779,7 @@
 }
 
 .search__filters-reset:hover {
-    background-color: rgba(255,255,255,0.03);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .search__filters-apply {
@@ -873,7 +873,7 @@
     border-radius: 10px;
     cursor: pointer;
     user-select: none;
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
     border: 1px solid transparent;
     transition: var(--transition-default);
     color: var(--color-text-secondary);
@@ -881,7 +881,7 @@
 }
 
 .search__rating-option:hover {
-    background-color: rgba(255,255,255,0.02);
+    background-color: rgba(255, 255, 255, 0.02);
     color: var(--color-text-primary);
 }
 
@@ -892,8 +892,8 @@
 }
 
 .search__rating-option--selected {
-    background-color: rgba(255,59,48,0.10);
-    border-color: rgba(255,59,48,0.12);
+    background-color: rgba(255, 59, 48, 0.10);
+    border-color: rgba(255, 59, 48, 0.12);
     color: var(--color-text-primary);
 }
 
@@ -901,6 +901,7 @@
     .search__price-range {
         max-width: 240px;
     }
+
     .search__developer-select {
         max-width: 280px;
     }
@@ -2646,8 +2647,8 @@
     padding: 0.4rem 0.6rem;
     margin-right: 0.5rem;
     border-radius: var(--border-radius-sm);
-    border: 1px solid rgba(255,255,255,0.04);
-    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.03);
     color: var(--color-text-primary);
     font-weight: 700;
     cursor: pointer;
@@ -2759,7 +2760,7 @@
     transition: right 0.3s ease;
     z-index: 10000;
     padding: var(--gap-lg) var(--gap-sm);
-    box-shadow: -4px 0 12px rgba(0,0,0,0.35);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.35);
 }
 
 .header__nav.header__nav--mobile.header__nav--open {
@@ -2770,6 +2771,7 @@
     .header__nav.header__nav--mobile {
         display: block;
     }
+
     .header__nav-list {
         flex-direction: column;
         gap: var(--gap-md);

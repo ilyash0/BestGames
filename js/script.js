@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const minPrice = priceMin ? priceMin.value : '';
             const maxPrice = priceMax ? priceMax.value : '';
 
-            console.log({ activeGenres, rating, developer, minPrice, maxPrice });
+            console.log({activeGenres, rating, developer, minPrice, maxPrice});
 
             if (window.innerWidth < 768 && !filters.classList.contains('search__filters--collapsed')) {
                 collapseFilters();
