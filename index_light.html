@@ -70,6 +70,12 @@
     <section class="slider">
         <h1 class="visually-hidden">BestGames</h1>
         <div class="slider__container">
+            <button class="slider__control slider__control--prev focus-outline">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="slider__control slider__control--next focus-outline">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
             <div class="slider__track">
                 <div class="slider__slide">
                     <div class="slider__slide-content">
@@ -205,8 +211,8 @@
         <div class="popular__container">
             <h2 class="popular__title" id="popular-title">Популярные игры</h2>
             <p class="popular__description">Топ-5 игр по популярности. Покупка и подробная информация в каталоге</p>
-            <div class="popular__list" role="list">
-                <div class="game-card popular__card">
+            <div class="popular__list">
+                <div class="game-card popular__card" onclick="window.location.href='catalog.html'">
                     <img class="game-card__image" src="./img/doom-dark-ages-square.webp"
                          alt="Обложка игры 'Example Game 1'">
                     <h3 class="game-card__title">DOOM The Dark Ages</h3>
@@ -220,8 +226,9 @@
                         <span class="game-card__star filled">★</span>
                     </div>
                     <p class="game-card__price">1499 ₽</p>
+                    <a class="game-card__link focus-outline" href="catalog.html">Подробнее</a>
                 </div>
-                <div class="game-card popular__card">
+                <div class="game-card popular__card" onclick="window.location.href='catalog.html'">
                     <img class="game-card__image" src="./img/bg3-square.webp"
                          alt="Обложка игры 'Example Game 5'">
                     <h3 class="game-card__title">Baldur's Gate 3</h3>
@@ -235,8 +242,9 @@
                         <span class="game-card__star">☆</span>
                     </div>
                     <p class="game-card__price">1999 ₽</p>
+                    <a class="game-card__link focus-outline" href="catalog.html">Подробнее</a>
                 </div>
-                <div class="game-card popular__card focus-outline">
+                <div class="game-card popular__card focus-outline" onclick="window.location.href='catalog.html'">
                     <img class="game-card__image" src="./img/doom-eternal-square.webp"
                          alt="Обложка игры 'Example Game 2'">
                     <h3 class="game-card__title">DOOM Eternal</h3>
@@ -250,8 +258,9 @@
                         <span class="game-card__star filled">★</span>
                     </div>
                     <p class="game-card__price">999 ₽</p>
+                    <a class="game-card__link focus-outline" href="catalog.html">Подробнее</a>
                 </div>
-                <div class="game-card popular__card">
+                <div class="game-card popular__card" onclick="window.location.href='catalog.html'">
                     <img class="game-card__image" src="./img/doom-square.webp"
                          alt="Обложка игры 'Example Game 3'">
                     <h3 class="game-card__title">DOOM 2016</h3>
@@ -265,8 +274,9 @@
                         <span class="game-card__star filled">★</span>
                     </div>
                     <p class="game-card__price">799 ₽</p>
+                    <a class="game-card__link focus-outline" href="catalog.html">Подробнее</a>
                 </div>
-                <div class="game-card popular__card">
+                <div class="game-card popular__card" onclick="window.location.href='catalog.html'">
                     <img class="game-card__image" src="./img/minecraft-square.webp"
                          alt="Обложка игры 'Example Game 5'">
                     <h3 class="game-card__title">Minecraft</h3>
@@ -280,6 +290,7 @@
                         <span class="game-card__star">☆</span>
                     </div>
                     <p class="game-card__price">1999 ₽</p>
+                    <a class="game-card__link focus-outline" href="catalog.html">Подробнее</a>
                 </div>
             </div>
         </div>
