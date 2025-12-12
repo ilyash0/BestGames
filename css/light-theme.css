@@ -1,0 +1,13 @@
+:root {
+    /* Colors */
+    --color-bg-main: #FFFFFF;
+    --color-bg-secondary: #F7F7F7;
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #555555;
+    --color-accent: #FF3B30;
+    --color-accent-hover: #ff7b72;
+    --color-accent-focus: #ff8000;
+    --color-border-divider: #DADADA;
+    --color-secondary-button-hover: #ffbbbb;
+
+}

@@ -150,6 +150,7 @@
     cursor: pointer;
     transition: var(--transition-default);
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .header__theme-toggle:hover {
