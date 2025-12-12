@@ -93,169 +93,30 @@
         </div>
     </section>
 
-    <section class="search" id="search">
-        <div class="search__container">
-            <h2 class="search__title">Быстрый поиск</h2>
-            <form class="search__form">
-                <div class="search__input-wrapper">
-                    <input class="search__input" type="search"
-                           name="q" placeholder="Введите название игры..."
-                           autocomplete="off" aria-label="Поиск игр по названию">
-                    <button class="search__button focus-outline" type="submit">
+    <section class="quick-search" id="search">
+        <div class="quick-search__container">
+            <h2 class="quick-search__title">Быстрый поиск по жанрам</h2>
+            <form class="quick-search__form" action="catalog.html" method="get">
+                <div class="quick-search__input-wrapper">
+                    <input class="quick-search__input"
+                           type="search"
+                           name="genre"
+                           list="genre-suggestions"
+                           placeholder="Введите жанр"
+                           autocomplete="off"
+                           aria-label="Поиск игр по жанрам">
+                    <datalist id="genre-suggestions">
+                        <option value="Шутер от первого лица">
+                        <option value="Классическая RPG">
+                        <option value="Метроидванмя">
+                        <option value="Выживание">
+                        <option value="Песочница">
+                    </datalist>
+                    <button class="quick-search__button focus-outline" type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
             </form>
-            <div class="search__content-layout">
-                <aside class="search__filters">
-                    <div class="search__filters-header">
-                        <h3 class="search__filters-title" id="filters-title">Фильтры</h3>
-                        <div class="search__filters-controls">
-                            <button class="search__filters-toggle focus-outline" type="button">
-                                <i class="fas fa-sliders-h"></i>
-                                <span class="search__filters-toggle-text">Свернуть</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="search__filters-body" id="filters-body">
-                        <div class="search__filters-group">
-                            <h4 class="search__filters-group-title">Жанры</h4>
-                            <ul class="search__filters-list">
-                                <li class="search__filter-option">
-                                    <label class="search__filter-label">
-                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
-                                               name="genre" value="action">
-                                        <span class="search__filter-text">Шутер от первого лица</span>
-                                    </label>
-                                </li>
-                                <li class="search__filter-option">
-                                    <label class="search__filter-label">
-                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
-                                               name="genre" value="rpg">
-                                        <span class="search__filter-text">Классическая RPG</span>
-                                    </label>
-                                </li>
-                                <li class="search__filter-option">
-                                    <label class="search__filter-label">
-                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
-                                               name="genre" value="sandbox">
-                                        <span class="search__filter-text">Песочница</span>
-                                    </label>
-                                </li>
-                                <li class="search__filter-option">
-                                    <label class="search__filter-label">
-                                        <input class="search__filter-checkbox focus-outline" type="checkbox"
-                                               name="genre" value="survival">
-                                        <span class="search__filter-text">Выживание</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="search__filters-actions">
-                            <button class="search__filters-reset focus-outline" type="button">Сбросить</button>
-                            <button class="search__filters-apply focus-outline" type="button">Применить</button>
-                        </div>
-                    </div>
-                </aside>
-                <div class="search__results">
-                    <div class="game-card">
-                        <img class="game-card__image" src="./img/doom-dark-ages-square.webp"
-                             alt="Обложка игры 'Example Game 1'">
-                        <h3 class="game-card__title">DOOM The Dark Ages</h3>
-                        <p class="game-card__genre">Шутер от первого лица</p>
-                        <p class="game-card__developer">Bethesda</p>
-                        <div class="game-card__rating">
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                        </div>
-                        <p class="game-card__price">1499 ₽</p>
-                        <a class="game-card__link focus-outline" href="#">Купить</a>
-                    </div>
-                    <div class="game-card">
-                        <img class="game-card__image" src="./img/doom-eternal-square.webp"
-                             alt="Обложка игры 'Example Game 2'">
-                        <h3 class="game-card__title">DOOM Eternal</h3>
-                        <p class="game-card__genre">Шутер от первого лица</p>
-                        <p class="game-card__developer">Bethesda</p>
-                        <div class="game-card__rating">
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                        </div>
-                        <p class="game-card__price">999 ₽</p>
-                        <a class="game-card__link focus-outline" href="#">Купить</a>
-                    </div>
-                    <div class="game-card">
-                        <img class="game-card__image" src="./img/doom-square.webp"
-                             alt="Обложка игры 'Example Game 3'">
-                        <h3 class="game-card__title">DOOM 2016</h3>
-                        <p class="game-card__genre">Шутер от первого лица</p>
-                        <p class="game-card__developer">Bethesda</p>
-                        <div class="game-card__rating">
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                        </div>
-                        <p class="game-card__price">799 ₽</p>
-                        <a class="game-card__link focus-outline" href="#">Купить</a>
-                    </div>
-                    <div class="game-card">
-                        <img class="game-card__image" src="./img/terraria-square.webp"
-                             alt="Обложка игры 'Example Game 4'">
-                        <h3 class="game-card__title">Terraria</h3>
-                        <p class="game-card__genre">Песочница, выживание</p>
-                        <p class="game-card__developer">ReLogic</p>
-                        <div class="game-card__rating">
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star">☆</span>
-                            <span class="game-card__star">☆</span>
-                        </div>
-                        <p class="game-card__price">1299 ₽</p>
-                        <a class="game-card__link focus-outline" href="#">Купить</a>
-                    </div>
-                    <div class="game-card">
-                        <img class="game-card__image" src="./img/bg3-square.webp"
-                             alt="Обложка игры 'Example Game 5'">
-                        <h3 class="game-card__title">Baldur's Gate 3</h3>
-                        <p class="game-card__genre">Классическая RPG</p>
-                        <p class="game-card__developer">Larian studio</p>
-                        <div class="game-card__rating">
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star">☆</span>
-                        </div>
-                        <p class="game-card__price">1999 ₽</p>
-                        <a class="game-card__link focus-outline" href="#">Купить</a>
-                    </div>
-                    <div class="game-card">
-                        <img class="game-card__image" src="./img/minecraft-square.webp"
-                             alt="Обложка игры 'Example Game 5'">
-                        <h3 class="game-card__title">Minecraft</h3>
-                        <p class="game-card__genre">Песочница, выживание</p>
-                        <p class="game-card__developer">Mojang studio</p>
-                        <div class="game-card__rating">
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star filled">★</span>
-                            <span class="game-card__star">☆</span>
-                        </div>
-                        <p class="game-card__price">1999 ₽</p>
-                        <a class="game-card__link focus-outline" href="#">Купить</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
