@@ -99,26 +99,37 @@
     <section class="profile-settings">
         <div class="profile-settings__container">
             <h2 class="profile-settings__title">Настройки профиля</h2>
-            <div class="profile-settings__controls">
-                <a href="#" class="profile-settings__password-btn focus-outline">
-                    Сменить пароль
-                </a>
-                <div class="profile-settings__theme">
-                    <span class="profile-settings__theme-label">Тема:</span>
-                    <label class="profile-settings__theme-option">
-                        <input type="radio" name="theme" value="dark"
-                               class="profile-settings__theme-radio focus-outline" checked>
-                        <span class="profile-settings__theme-text">Тёмная</span>
-                    </label>
-                    <label class="profile-settings__theme-option">
-                        <input type="radio" name="theme" value="light"
-                               class="profile-settings__theme-radio focus-outline"
-                               onclick="window.location.href='index_light.html'">
-                        <span class="profile-settings__theme-text">Светлая</span>
-                    </label>
+            <form class="profile-settings__form">
+                <div class="profile-settings__row">
+                    <a href="#" class="profile-settings__password-btn focus-outline">
+                        Изменить пароль
+                    </a>
                 </div>
-
-            </div>
+                <div class="profile-settings__row">
+                    <span class="profile-settings__label">Тема интерфейса</span>
+                    <div class="profile-settings__options profile-settings__theme">
+                        <label class="profile-settings__option">
+                            <input type="radio" name="theme" value="dark"
+                                   class="profile-settings__radio focus-outline" checked>
+                            <span class="profile-settings__text">Тёмная</span>
+                        </label>
+                        <label class="profile-settings__option">
+                            <input type="radio" name="theme" value="light"
+                                   class="profile-settings__radio focus-outline"
+                                   onclick="window.location.href='index_light.html'">
+                            <span class="profile-settings__text">Светлая</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="profile-settings__row">
+                    <label class="profile-settings__label" for="language-select">Язык интерфейса</label>
+                    <select id="language-select" class="profile-settings__select focus-outline" name="language">
+                        <option value="ru" selected>Русский</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </form>
         </div>
     </section>
 
