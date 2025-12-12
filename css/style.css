@@ -2360,7 +2360,6 @@
 
 .profile-settings__password-btn:hover {
     background-color: var(--color-accent-hover);
-    transform: translateY(-1px);
 }
 
 .profile-settings__options {
