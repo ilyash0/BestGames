@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const prevBtn = document.querySelector('.slider__control--prev');
+    const nextBtn = document.querySelector('.slider__control--next');
+    const slider = document.querySelector('.slider');
+
+    if (!slider || !prevBtn || !nextBtn) return;
+
+    const track = slider.querySelector('.slider__track');
+    const slides = Array.from(slider.querySelectorAll('.slider__slide'));
+    const indicators = Array.from(slider.querySelectorAll('.slider__indicator'));
+    if (!track || slides.length === 0) return;
+
+    let currentSlideIndex = 0;
+    const totalSlides = slides.length;
+
+    function goToSlide(index) {
+        currentSlideIndex = ((index % totalSlides) + totalSlides) % totalSlides;
+        track.style.transform = `translateX(${-currentSlideIndex * 100}%)`;
+        indicators.forEach((ind, idx) => ind.classList.toggle('active', idx === currentSlideIndex));
+    }
+
+    prevBtn.addEventListener('click', () => {
+        goToSlide(currentSlideIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        goToSlide(currentSlideIndex + 1);
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider');
     if (!slider) return;
 
